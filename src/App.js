@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Chatbox from './Components/Chatbox';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ColorThief from "colorthief";
+//import ColorThief from "colorthief";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -51,11 +51,11 @@ class App extends React.Component {
           let art = new Image(640, 640);
           art.src = this.state.artURL;
 
-          new ColorThief().getPalette(art, 2).then(palette =>
-            console.log(palette)
-            // document.body.style.setProperty('--primarybg', palette[0]), 
-            // document.body.style.setProperty('--secondarybg', palette[1])
-          )
+          // new ColorThief().getPalette(art, 2).then(palette =>
+          //   console.log(palette)
+          //   // document.body.style.setProperty('--primarybg', palette[0]), 
+          //   // document.body.style.setProperty('--secondarybg', palette[1])
+          // )
 
 
 
