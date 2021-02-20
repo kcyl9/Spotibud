@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import Chatbox from './Components/Chatbox';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -48,6 +47,9 @@ class App extends React.Component {
             username: "Anonymous " + json[Math.floor(Math.random() * json.length)]
           })
           console.log(this.state.username)
+          let art = new Image(640, 640);
+          art.src = this.state.artURL;
+
 
           // console.log("loaded")
           // fetch("animals.json").then(response => response.json()).then(
@@ -85,7 +87,6 @@ class App extends React.Component {
 
     let chatinterface = [];
     if (this.state.loaded) {
-      chatinterface.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
       chatinterface.push(<Chatbox roomID={this.state.songID} userID={this.state.username}/>)
       chatinterface.push(<Textbox roomID={this.state.songID} userID={this.state.username}/>)
     } else if (this.state.willLoad) {
@@ -94,7 +95,12 @@ class App extends React.Component {
       chatinterface.push()// Add error message here for api fail
     }
     return (
-      <Router>
+      <div>
+        <div style={{display: 'flex', alignItems: 'center'}} className="header">
+          <img style={{marginLeft: '5em', marginRight: '1em'}} src={"bud.png"} width="3%" alt="best friend owo"></img>
+          <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
+        </div>
+        <Router>
         <Switch>
           <Route path="/" exact>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
@@ -110,10 +116,6 @@ class App extends React.Component {
           <Route>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
             <div className="App2">
-              <div className="header">
-                <img className="bud" src={"bud.png"} width="4%" alt="best friend owo"></img>
-                <h1 className="Spotibud"><b>Spotibud</b></h1>
-              </div>
               <TrackInfo art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
               <div className="chatroom">
                   {chatinterface}
@@ -121,10 +123,10 @@ class App extends React.Component {
               </div>
               <footer>
               
-                <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
+                <a href={this.state.songURL} target="_blank">
                   <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
                 </a>
-                <p className="text3">Listen on Spotify</p>
+                <a className="text3" href={this.state.songURL} style={{color: 'white'}}>Listen on Spotify</a>
               
               </footer>
               
@@ -132,7 +134,8 @@ class App extends React.Component {
           </Route>
         </Switch>
       </Router>
-    );
+      </div>
+      );
   }
 
 }
