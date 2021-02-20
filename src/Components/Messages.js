@@ -1,7 +1,7 @@
 import React from "react";
 
-function Messages() {
-  
+function Messages(props) {
+
 
   return (
 

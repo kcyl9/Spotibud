@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Messages from './Components/Messages.js';
+import Textbox from './Components/Textbox.js';
 
 function App() {
 
