@@ -5,7 +5,7 @@ import Message from "./Message.js";
 function Messages(props) {
   return (
     <div className="Messages">
-      {props.data.map((message) => <li>{message}</li>)}
+      {props.data.map((message) => <Message message={message}/>)}
     </div>
   );
 }

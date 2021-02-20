@@ -11,17 +11,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
-let messagesDummy = []
-
-const dbRefObject = firebaseApp.database().ref().child('spotifyId');
-const dbRefMessagesList = dbRefObject.child('messages')
-
-dbRefMessagesList.on("child_added", snap => {
-  messagesDummy.push(snap.val().message);
-})
-
-const listMessages = messagesDummy.map((text) => <li>{text}</li>);
+import Chatbox from './Components/Chatbox';
 
 class App extends React.Component {
   constructor(props) {
@@ -99,7 +89,7 @@ class App extends React.Component {
           </Route>
           <Route>
               {songinfo}
-              <ul id="listMessages">{listMessages}</ul>
+              <Chatbox/>
               <Textbox/>
           </Route>
         </Switch>
