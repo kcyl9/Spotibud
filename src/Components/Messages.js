@@ -1,12 +1,12 @@
 import React from "react";
+import Message from "./Message.js";
+
 
 function Messages(props) {
 
-
   return (
-
     <div className="Messages">
-      {props.data.map(({author, timestamp, message}) => <div><h5>{author} wrote at {timestamp}:</h5> <p>{message}</p></div>)}
+      {props.data.map(({author, timestamp, message}) => <Message author={author} timestamp={timestamp} message = {message}/>)}
     </div>
   );
 }

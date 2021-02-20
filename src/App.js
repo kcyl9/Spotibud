@@ -5,6 +5,8 @@ import Textbox from './Components/Textbox.js';
 
 function App() {
 
+  let url = window.location.pathname;
+
   let messagesDummy = [
     {author: "Author A",
      timestamp: "13:61",
