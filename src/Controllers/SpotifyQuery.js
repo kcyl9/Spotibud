@@ -17,19 +17,21 @@ function getSpotifyTrackID() {
         if (key === "/callback/") {
             // Second run through
             console.log("lol")
+            console.log(cookie.load('lastvisited'));
             window.location.replace(window.location.origin + cookie.load('lastvisited') + window.location.hash)
         } else {
             // Third run through
-            fetch('https://api.spotify.com/v1/tracks/' + cookie.load('lastvisited').substring(7,29), {
+            console.log(cookie);
+            return fetch('https://api.spotify.com/v1/tracks/' + cookie.load('lastvisited').substring(7,29), {
                 headers: {
                     'Authorization': 'Bearer ' + hash
                 }
-            }).then( response => response.json()
-            ).then(data => console.log(data))
+            }).then( response => response.json())
+            .then(data => {return [true, data]})
+            .catch(error => {return [false, error]})
         }
     }
-    // TODO: handle user rejection    
-
 }
+    // TODO: handle user rejection
 
 export default getSpotifyTrackID;
