@@ -23,6 +23,7 @@ body {
   text-align: center;
   margin-bottom: 25vh;
 }
+
 .App-text1 {
   margin-top: 25vh;
   margin-bottom: 3vh;
@@ -59,6 +60,13 @@ body {
   margin: 2%;
 }
 /* Second Page */
+.App2{
+  color: rgb(255, 255, 255);
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 1.8vw;
+  font-weight: 200;
+  margin-bottom: 25vh;  
+}
 .header{
   background-color: #000;
   width: 100%;
@@ -85,11 +93,12 @@ p {
 
 }
 .container{
-  width: 100%;
+  width: 70%;
 }
 .song {
-  width: 50%;
+  width: 40%;
   height: fit-content;
+  float: left;
   text-align: center;
   margin-right: 5%;
   background-color: rgba(255, 255, 255, 0.16);
@@ -103,7 +112,7 @@ p {
 }
 .listen {
   background-color: #000;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   margin: 0%;
 }
@@ -116,8 +125,8 @@ p {
   margin-right: 2%;
 }
 .chatroom {
-  width: 44%;
-  height: 31vw;
+  width: 50%;
+  height: fit-content;
   background-color: rgba(255, 255, 255, 0.16);
   float: left;
   padding: 5%;

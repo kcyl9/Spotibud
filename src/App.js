@@ -108,7 +108,7 @@ class App extends React.Component {
           </Route>
           <Route>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
-            <div className="App">
+            <div className="App2">
               <div className="header">
                 <img className="bud" src={"bud.png"} width="4%" alt="best friend owo"></img>
                 <h1 className="Spotibud"><b>Spotibud</b></h1>
@@ -119,18 +119,18 @@ class App extends React.Component {
                   <p className="album"><i>Album Name</i></p>
                   <p className="title"><b>Song Title</b></p>
                   <p className="artist"><i>Song Artist</i></p>
-                  <div className="listen">
-                    <p className="text3">Listen on Spotify</p>
-                    <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
-                      <img className="spotifybutton" src="spotifyicon.png" alt="spotify link" width="20%" ></img>
-                    </a>
-                  </div>
                 </div>
                 <div className="chatroom">
                   {chatinterface}
                   <p><input className="message" type="text"></input></p>
                 </div>
               </div>
+              <div className="listen">
+                    <p className="text3">Listen on Spotify</p>
+                    <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
+                      <img className="spotifybutton" src="spotifyicon.png" alt="spotify link" width="20%" ></img>
+                    </a>
+                </div>
             </div>
           </Route>
         </Switch>
