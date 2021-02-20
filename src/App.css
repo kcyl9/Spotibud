@@ -26,6 +26,7 @@ body {
 }
 .App-text1 {
   margin-bottom: 3vh;
+  font-size: 2.8vw;
 }
 .App-url-input:focus {
   background-color: #3b3b3b48;

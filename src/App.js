@@ -90,7 +90,7 @@ class App extends React.Component {
           <Route path="/" exact>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
             <div class="App">
-              <h1 class="App-text1">Drop Song URL Here</h1>
+              <h1 class="App-text1"><b>Drop Song URL Here</b></h1>
               <form onSubmit={this.handleUrlDrop}>
                 <input class="App-url-input" type="url" id="url" onSubmit={this.handleUrlDrop}></input>
               </form>
