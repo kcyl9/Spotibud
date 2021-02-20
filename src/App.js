@@ -22,7 +22,6 @@ class App extends React.Component {
       song: "None",
       songURL: "None",
       songID: "None",
-      songInfo: [],
       username: ""
     }
   }
