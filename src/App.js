@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Chatbox from './Components/Chatbox';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import ColorThief from "colorthief";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -48,6 +48,16 @@ class App extends React.Component {
             username: "Anonymous " + json[Math.floor(Math.random() * json.length)]
           })
           console.log(this.state.username)
+          let art = new Image(640, 640);
+          art.src = this.state.artURL;
+
+          new ColorThief().getPalette(art, 2).then(palette =>
+            console.log(palette)
+            // document.body.style.setProperty('--primarybg', palette[0]), 
+            // document.body.style.setProperty('--secondarybg', palette[1])
+          )
+
+
 
           // console.log("loaded")
           // fetch("animals.json").then(response => response.json()).then(
@@ -93,7 +103,12 @@ class App extends React.Component {
       chatinterface.push()// Add error message here for api fail
     }
     return (
-      <Router>
+      <div>
+        <div style={{display: 'flex', alignItems: 'center'}} className="header">
+          <img style={{marginLeft: '5em', marginRight: '1em'}} src={"bud.png"} width="3%" alt="best friend owo"></img>
+          <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
+        </div>
+        <Router>
         <Switch>
           <Route path="/" exact>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
@@ -109,10 +124,6 @@ class App extends React.Component {
           <Route>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
             <div className="App2">
-              <div className="header">
-                <img className="bud" src={"bud.png"} width="4%" alt="best friend owo"></img>
-                <h1 className="Spotibud"><b>Spotibud</b></h1>
-              </div>
               <TrackInfo art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
               <div className="chatroom">
                   {chatinterface}
@@ -131,7 +142,8 @@ class App extends React.Component {
           </Route>
         </Switch>
       </Router>
-    );
+      </div>
+      );
   }
 
 }
