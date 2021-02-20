@@ -89,10 +89,12 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact>
             <div className="App">
-              <h1 class="App-text1">Drop Song URL Here</h1>
-              <td class="App-url-input"><input type="url"></input></td>
-              <img src="buds.svg" width = "20%" alt="best friends owo" class="App-logo"></img>
-              <p class="App-text2"><b>to meet spotibuddies</b></p>
+              <body class="body">
+                <h1 class="App-text1">Drop Song URL Here</h1>
+                <td class="App-url-input"><input type="url"></input></td>
+                <img src="buds.svg" width = "20%" alt="best friends owo" class="App-logo"></img>
+                <p class="App-text2"><b>to meet spotibuddies</b></p>
+              </body>
             </div>
           </Route>
           <Route>
