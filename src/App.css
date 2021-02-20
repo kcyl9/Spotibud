@@ -25,7 +25,7 @@ body {
 }
 
 .App-text1 {
-  margin-top: 25vh;
+  margin-top: 15vh;
   margin-bottom: 3vh;
   font-size: 2.8vw;
   vertical-align: middle;
@@ -68,7 +68,7 @@ body {
   margin-bottom: 25vh;  
 }
 .header{
-  background-color: #000;
+  background-color: #000000;
   width: 100%;
   height: fit-content;
   margin-bottom: 2.5%;
