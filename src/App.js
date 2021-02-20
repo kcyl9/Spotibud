@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import Chatbox from './Components/Chatbox';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import ColorThief from "colorthief";
 class App extends React.Component {
   constructor(props) {
     super(props);
