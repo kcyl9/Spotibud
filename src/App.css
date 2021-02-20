@@ -131,3 +131,46 @@ p {
   font-size: 1.5vw;
   padding: 0.8vw;
 }
+
+.Message {
+  width: 80%;
+  margin: 10px auto;
+
+  padding: 5px;
+  color: #fff;
+  position:relative;
+}
+
+.otherMessage {
+  background: #333;
+}
+
+.otherMessage:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 30px solid transparent;
+  border-right: 30px solid #333;
+  border-top: 30px solid #333;
+  border-bottom: 30px solid transparent;
+  left: -60px;
+  top: 0px;
+}
+
+.ownMessage {
+  background: #05a
+}
+
+.ownMessage:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-right: 30px solid transparent;
+  border-left: 30px solid #05a;
+  border-top: 30px solid #05a;
+  border-bottom: 30px solid transparent;
+  right: -60px;
+  top: 0px;
+}
