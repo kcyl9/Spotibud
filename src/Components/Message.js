@@ -5,7 +5,9 @@ function Message(props) {
 
   return (
     <div className="Message otherMessage">
-      <div><p>{props.message.userID} said: {props.message.message} at {new Date(props.message.timestamp).toString()}</p></div>
+      <p className="user">{props.message.userID} said: </p> 
+      <p>{props.message.message} </p>
+      <p className="timestamp"> at {new Date(props.message.timestamp).toString()}</p>
     </div>
   );
 }
