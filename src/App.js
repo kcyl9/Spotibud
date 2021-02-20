@@ -79,8 +79,10 @@ class App extends React.Component {
       chatinterface.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
       chatinterface.push(<Chatbox/>)
       chatinterface.push(<Textbox/>)
-    } else {
+    } else if (this.state.willLoad) {
       chatinterface.push()// Add loading screen animation here
+    } else {
+      chatinterface.push()// Add error message here for api fail
     }
     return (
       <Router>
