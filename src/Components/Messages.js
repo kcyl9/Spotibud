@@ -3,10 +3,9 @@ import Message from "./Message.js";
 
 
 function Messages(props) {
-
   return (
     <div className="Messages">
-      {props.data.map(({author, timestamp, message}) => <Message author={author} timestamp={timestamp} message = {message}/>)}
+      {props.data.map((message) => <li>{message}</li>)}
     </div>
   );
 }

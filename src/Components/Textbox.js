@@ -1,14 +1,36 @@
-import React from "react";
+import React, {Component} from "react";
+import firebaseApp from "../Controllers/Firebase";
 
-function Textbox() {
+class Textbox extends Component {
+  state={
+    message : ""
+  }
 
+  handleText=e=>{
+    this.setState({
+      message : e.target.value
+    })
+  }
+
+  handleSubmit=e=>{
+    let messageRef = firebaseApp.database().ref('spotifyId/messages').orderByKey().limitToLast
+    const text = {
+      message: this.state.message
+    }
+    firebaseApp.database().ref('spotifyId/messages').push(text)
+    this.setState({
+      message : ""
+    })
+  }
+
+  render() {
     return (
-
       <div className="Textbox">
-          <input type="text" id="message" placeholder="Message your Spotibuds"></input>
-          <button id="send">Send!</button>
+          <input type="text" onChange={this.handleText} id="message" placeholder="Message your Spotibuds"></input>
+          <button onClick={this.handleSubmit} id="send">Send!</button>
       </div>
     );
-  }
+  } 
+}
   
-  export default Textbox;
+export default Textbox;

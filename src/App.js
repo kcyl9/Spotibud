@@ -3,30 +3,26 @@ import './App.css';
 import Messages from './Components/Messages.js';
 import Textbox from './Components/Textbox.js';
 import getSpotifyTrackID from './Controllers/SpotifyQuery.js'
-import firebaseConfig from './Controllers/Firebase.js'
+import firebaseApp from './Controllers/Firebase.js'
+
+let messagesDummy = []
+
+const dbRefObject = firebaseApp.database().ref().child('spotifyId');
+const dbRefMessagesList = dbRefObject.child('messages')
+
+dbRefMessagesList.on("child_added", snap => {
+  messagesDummy.push(snap.val().message);
+})
 
 function App() {
 
   getSpotifyTrackID();
-
-  let messagesDummy = [
-    {author: "Author A",
-     timestamp: "13:61",
-     message: "message 1"},
-    {author: "Author B",
-     timestamp: "13:62",
-     message: "message 2"},
-    {author: "Author C",
-     timestamp: "13:63",
-     message: "message 3"},
-    {author: "Author D",
-     timestamp: "13:64",
-     message: "message 4"},
-  ]
+  
+  const listMessages = messagesDummy.map((text) => <li>{text}</li>);
 
   return (
     <div className="App">
-      <Messages data={messagesDummy}/>
+      <ul id="listMessages">{listMessages}</ul>
       <Textbox/>
     </div>
   );
