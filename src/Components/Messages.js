@@ -18,7 +18,7 @@ function Messages(props) {
 
   return (
     <div className="Messages">
-      {props.data.map((message) => <Message key={message} message={message}/>)}
+      {props.data.map((message) => <Message key={props.data.timestamp} message={message}/>)}
     </div>
   );
 }
