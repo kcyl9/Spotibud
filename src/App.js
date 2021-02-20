@@ -1,17 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Messages from './Components/Messages.js';
 import Textbox from './Components/Textbox.js';
 import getSpotifyTrackID from './Controllers/SpotifyQuery.js'
-import firebaseApp from './Controllers/Firebase.js'
 import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Chatbox from './Components/Chatbox';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +22,8 @@ class App extends React.Component {
       song: "None",
       songURL: "None",
       songID: "None",
-      songInfo: []
+      songInfo: [],
+      username: ""
     }
   }
 
@@ -34,10 +32,10 @@ class App extends React.Component {
       getSpotifyTrackID().then( (value) =>
       {
         if(value[0] === true) {
-          let trackData = {};
           console.log(value[1])
           console.log(value[1]['artists'].map(value => value['name']).join(", "))
   
+          let json = require("./Components/animals.json")
           this.setState({
             willLoad : true,
             loaded : true,
@@ -46,13 +44,19 @@ class App extends React.Component {
             artists: value[1]['artists'].map(value => value['name']).join(", "),
             song: value[1]['name'],
             songURL: value[1]['external_urls']['spotify'],
-            songID: value[1]['id']
+            songID: value[1]['id'],
+            username: "Anonymous " + json[Math.floor(Math.random() * json.length)]
           })
-  
-          console.log(this.state)
+          console.log(this.state.username)
+
+          // console.log("loaded")
+          // fetch("animals.json").then(response => response.json()).then(
+          //   json => {
+          //   }).catch(e => console.log(e))
   
         } else {
           this.setState({
+            ...this.state,
             willLoad : false,
             loaded : false,
             album: "None",
@@ -60,24 +64,34 @@ class App extends React.Component {
             artists: "None",
             song: "None",
             songURL: "None",
-            songID: "None"
+            songID: "None",
           })
         }
       });
     }
+
+  }
+
+  handleUrlDrop = (e) =>
+  {
+    e.preventDefault();
+    let form = e.target;
+    console.log(new URL(form.elements[0]['value']).pathname)
+
+    window.location.replace(window.location.origin + new URL(form.elements[0]['value']).pathname);
   }
 
   render() {
 
-    console.log(window.location.pathname)
-
+    let chatinterface = [];
     if (this.state.loaded) {
-      let infoObject = {
-        song: this.state.song,
-        album: this.state.album,
-        artists: this.state.artists
-      }
-      this.state.songInfo.push(infoObject)
+      chatinterface.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
+      chatinterface.push(<Chatbox roomID={this.state.songID} userID={this.state.username}/>)
+      chatinterface.push(<Textbox roomID={this.state.songID} userID={this.state.username}/>)
+    } else if (this.state.willLoad) {
+      chatinterface.push()// Add loading screen animation here
+    } else {
+      chatinterface.push()// Add error message here for api fail
     }
     return (
       <Router>
@@ -85,21 +99,24 @@ class App extends React.Component {
           <Route path="/" exact>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
             <div class="App">
-              <h1 class="App-text1">Drop Song URL Here</h1>
-              <p class="App-url-input"><input type="url"></input></p>
-              <img class="App-logo" src="buds.svg" width = "20%" alt="best friends owo"></img>
+              <h1 class="App-text1"><b>Drop Song URL Here</b></h1>
+              <form onSubmit={this.handleUrlDrop}>
+                <input class="App-url-input" type="url" id="url" onSubmit={this.handleUrlDrop}></input>
+              </form>
+              <img class="App-logo" src={"buds.png"} width = "20%" alt="best friends owo"></img>
               <p class="App-text2"><b>to meet spotibuddies</b></p>
             </div>
           </Route>
           <Route>
-              {this.state.songInfo.map(info => <p key={info.artists}>{info.song} from {info.album} by {info.artists} </p>)}
-              <Chatbox songID={this.state.songID}/>
-              <Textbox songID={this.state.songID}/>
+            <div class="App">
+              {chatinterface}
+            </div>
           </Route>
         </Switch>
       </Router>
     );
   }
+
 }
 
 
