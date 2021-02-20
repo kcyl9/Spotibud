@@ -52,6 +52,10 @@ body {
   margin-bottom: 5vh;
   padding: 10px;
 }
+*,*:focus,*:hover{
+  outline:none;
+}
+
 .App-logo {
   display: block;
   margin-left: auto;
