@@ -36,7 +36,7 @@ body {
   transition: background-color .5s;
   box-shadow: 0px 0px 7px 0.5px;
 }
-.App-input {
+.App-url-input {
   color: #fff;
   background: transparent;
   border-radius: 25px;

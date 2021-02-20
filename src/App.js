@@ -89,11 +89,9 @@ class App extends React.Component {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
             <div class="App">
               <h1 class="App-text1">Drop Song URL Here</h1>
-              <div class="App-url-input" style={{display: 'block', margin:'auto'}}>
-                <form onSubmit={this.handleUrlDrop}>
-                  <input type="url" id="url" onSubmit={this.handleUrlDrop}></input>
-                </form>
-              </div>
+              <form onSubmit={this.handleUrlDrop}>
+                <input class="App-url-input" type="url" id="url" onSubmit={this.handleUrlDrop}></input>
+              </form>
               <img class="App-logo" src={"buds.png"} width = "20%" alt="best friends owo"></img>
               <p class="App-text2"><b>to meet spotibuddies</b></p>
             </div>
