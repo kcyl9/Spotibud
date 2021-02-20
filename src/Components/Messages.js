@@ -5,8 +5,6 @@ import OwnMessage from "./OwnMessage.js"
 
 
 function Messages(props) {
-  console.log(props.data)
-  console.log("here")
   let messages = [];
   props.data.forEach(element => {
     if (element.userID === props.userID) {

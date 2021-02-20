@@ -9,7 +9,8 @@ class Chatbox extends Component {
 
     state = {
         messages: [],
-        loadedMessages: []
+        loadedMessages: [],
+        firstKnownKey: ""
     }
 
     constructor(props) {
@@ -17,23 +18,30 @@ class Chatbox extends Component {
         dbRefMessagesList = dbRefObject.child(this.props.roomID)
     }
 
+    childrenVal = [];
+    childrenKey = [];
 
     componentDidMount = () => {
         this.buildMessages();
-        this.loadMessages();
+        // this.loadFirstMessages();
+        // console.log(this.childrenVal)
+        // console.log(this.state.firstKnownKey)
+        // console.log(this.childrenKey)
+        // console.log(this.state.loadedMessages)
     }
 
-    loadMessages() {
-        for (let index = 0; index < this.state.messages.length/2; index++) {
-            try {
-                this.state.loadedMessages.push(this.state.messages.pop())
-                console.log(this.state.loadedMessages)
-                console.log(this.state.messages)
-            } catch (error) {
-                console.log("no more to load")
-            }
-        }
-    }
+    // loadFirstMessages() {
+    //     dbRefMessagesList.orderByKey().limitToLast(5).once('value').then((snap)=> {
+    //         snap.forEach(childSnap => {
+    //             this.childrenVal.unshift(childSnap.val().message)
+    //             this.childrenKey.unshift(childSnap.key)
+    //             this.state.loadedMessages.push({message: childSnap.val().message,
+    //                 userID: childSnap.val().userID,
+    //                 timestamp: childSnap.val().timestamp})
+    //         });
+    //         this.state.firstKnownKey = this.childrenKey[this.childrenKey.length - 1];
+    //     });
+    // }
 
     buildMessages() {
         dbRefMessagesList.on('child_added', snap => {
