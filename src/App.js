@@ -1,40 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import 'firebase/database';
-
-var firebase = require("firebase/app");
-require("firebase/database");
-
-firebase.intializeApp({ 
-  apiKey: "AIzaSyCdHlj6bH24v9JyLJmb2uHT4SfgDbk6utY",
-  authDomain: "spotibud.firebaseapp.com",
-  databaseURL: "https://spotibud-default-rtdb.firebaseio.com",
-  projectId: "spotibud",
-  storageBucket: "spotibud.appspot.com",
-  messagingSenderId: "171308756762",
-  appId: "1:171308756762:web:4a538418717f456ebe46a3",
-  measurementId: "G-41MB6MS2WG"
-})
-
-var database = firebase.database();
+import Messages from './Components/Messages.js';
+import Textbox from './Components/Textbox.js';
 
 function App() {
+
+  let url = window.location.pathname;
+
+  let messagesDummy = [
+    {author: "Author A",
+     timestamp: "13:61",
+     message: "message 1"},
+    {author: "Author B",
+     timestamp: "13:62",
+     message: "message 2"},
+    {author: "Author C",
+     timestamp: "13:63",
+     message: "message 3"},
+    {author: "Author D",
+     timestamp: "13:64",
+     message: "message 4"},
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Messages data={messagesDummy}/>
+      <Textbox/>
     </div>
   );
 }
