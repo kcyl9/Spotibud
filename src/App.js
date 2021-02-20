@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Messages from './Components/Messages.js';
 
 function App() {
+
+  let messagesDummy = [
+    {author: "Author A",
+     timestamp: "13:61",
+     message: "message 1"},
+    {author: "Author B",
+     timestamp: "13:62",
+     message: "message 2"},
+    {author: "Author C",
+     timestamp: "13:63",
+     message: "message 3"},
+    {author: "Author D",
+     timestamp: "13:64",
+     message: "message 4"},
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Messages data={messagesDummy}/>
+      <Textbox/>
     </div>
   );
 }
