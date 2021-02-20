@@ -87,10 +87,10 @@ class App extends React.Component {
           </Route>
           <Route>
               {songinfo}
+              <Chatbox/>
+              <Textbox/>
           </Route>
         </Switch>
-        <Chatbox/>
-        <Textbox/>
       </Router>
     );
   }
