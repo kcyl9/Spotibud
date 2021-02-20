@@ -108,8 +108,30 @@ class App extends React.Component {
             </div>
           </Route>
           <Route>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
             <div class="App">
-              {chatinterface}
+              <div class="header">
+                <img class="bud" src={"bud.png"} width="4%" alt="best friend owo"></img>
+                <h1 class="Spotibud"><b>Spotibud</b></h1>
+              </div>
+              <div class="container">
+                <div class="song">
+                  <img class="cover" src="https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/Mononoke-550x546.jpg" width = "100%" alt="song cover"></img> 
+                  <p class="album"><i>Album Name</i></p>
+                  <p class="title"><b>Song Title</b></p>
+                  <p class="artist"><i>Song Artist</i></p>
+                  <div class="listen">
+                    <p class="text3">Listen on Spotify</p>
+                    <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
+                      <img class="spotifybutton" src="spotifyicon.png" alt="spotify link" width="20%" ></img>
+                    </a>
+                  </div>
+                </div>
+                <div class="chatroom">
+                  {chatinterface}
+                  <td><input class="message" type="text"></input></td>
+                </div>
+              </div>
             </div>
           </Route>
         </Switch>
