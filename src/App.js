@@ -2,10 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import Messages from './Components/Messages.js';
 import Textbox from './Components/Textbox.js';
+import getSpotifyTrackID from './Controllers/SpotifyQuery.js'
+import firebaseConfig from './Controllers/Firebase.js'
 
 function App() {
 
-  let url = window.location.pathname;
+  getSpotifyTrackID();
 
   let messagesDummy = [
     {author: "Author A",
