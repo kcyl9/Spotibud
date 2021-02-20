@@ -114,19 +114,20 @@ class App extends React.Component {
                 <img className="bud" src={"bud.png"} width="4%" alt="best friend owo"></img>
                 <h1 className="Spotibud"><b>Spotibud</b></h1>
               </div>
-              <div className="container">
-                <TrackInfo art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
-                <div className="chatroom">
+              <TrackInfo art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
+              <div className="chatroom">
                   {chatinterface}
-                  <p><input className="message" type="text"></input></p>
-                </div>
+                <p><input className="message" type="text"></input></p>
               </div>
-              <div className="listen">
-                  <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
-                    <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
-                  </a>
-                  <p className="text3">Listen on Spotify</p>
-                </div>
+              <footer>
+              
+                <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
+                  <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
+                </a>
+                <p className="text3">Listen on Spotify</p>
+              
+              </footer>
+              
             </div>
           </Route>
         </Switch>
