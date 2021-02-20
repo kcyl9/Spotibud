@@ -126,10 +126,10 @@ class App extends React.Component {
                 </div>
               </div>
               <div className="listen">
-                    <p className="text3">Listen on Spotify</p>
-                    <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
-                      <img className="spotifybutton" src="spotifyicon.png" alt="spotify link" width="20%" ></img>
-                    </a>
+                  <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
+                    <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
+                  </a>
+                  <p className="text3">Listen on Spotify</p>
                 </div>
             </div>
           </Route>

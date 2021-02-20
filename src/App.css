@@ -75,7 +75,7 @@ body {
   padding: 10px;
 }
 .bud {
-  margin-top: 2vh;
+  margin-top: 2.5vh;
   margin-left: 4.5vw;
   margin-right: 0.7vw;
 }
@@ -90,7 +90,7 @@ p {
 .spotifybutton{
   margin-right: 10%;
   margin-top: 10%;
-
+  float: left;
 }
 .container{
   width: 70%;
@@ -111,18 +111,20 @@ p {
   font-size: 2.5vw;  
 }
 .listen {
+  float: left;
   background-color: #000;
   width: 100%;
-  height: fit-content;
-  margin: 0%;
+  margin-top: 5%;
+  padding: 2.5%;
 }
 .text3 {
-  float: right;
+  float: left;
 }
 .spotifybutton {
   float: left;
-  margin-top: 0%;
   margin-right: 2%;
+  margin-top: 0%;
+  margin-left: 5%;
 }
 .chatroom {
   width: 50%;
@@ -138,14 +140,13 @@ p {
   border-radius: 25px;
   border: 2px solid #fff;
   width: 96%;
-  font-size: 1.5vw;
+  font-size: 1.0vw;
   padding: 0.8vw;
 }
 
 .Message {
   width: 80%;
   margin: 10px auto;
-
   padding: 5px;
   color: #fff;
   position:relative;
