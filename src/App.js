@@ -70,9 +70,13 @@ class App extends React.Component {
 
     console.log(window.location.pathname)
 
-    let songinfo = [];
+    let chatinterface = [];
     if (this.state.loaded) {
-      songinfo.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
+      chatinterface.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
+      chatinterface.push(<Chatbox/>)
+      chatinterface.push(<Textbox/>)
+    } else {
+      chatinterface.push()// Add loading screen animation here
     }
     return (
       <Router>
@@ -86,9 +90,7 @@ class App extends React.Component {
             </div>
           </Route>
           <Route>
-              {songinfo}
-              <Chatbox/>
-              <Textbox/>
+              {chatinterface}
           </Route>
         </Switch>
       </Router>
