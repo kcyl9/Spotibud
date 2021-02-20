@@ -21,11 +21,11 @@ body {
   font-size: 1.8vw;
   font-weight: 200;
   text-align: center;
-  margin-top: 25vh;
   margin-bottom: 25vh;
   vertical-align: middle;
 }
 .App-text1 {
+  margin-top: 25vh;
   margin-bottom: 3vh;
   font-size: 2.8vw;
 }
@@ -58,12 +58,11 @@ body {
   border: 2px rgb(255, 255, 255);
   margin: 2%;
 }
-
 /* Second Page */
 .header{
   background-color: #000;
-  width: 100%;
-  height: 20vw;
+  width: fit-content;
+  height: fit-content;
   margin-bottom: 2.5%;
 }
 .bud {
