@@ -1,17 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Messages from './Components/Messages.js';
 import Textbox from './Components/Textbox.js';
 import getSpotifyTrackID from './Controllers/SpotifyQuery.js'
-import firebaseApp from './Controllers/Firebase.js'
 import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Chatbox from './Components/Chatbox';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +21,7 @@ class App extends React.Component {
       artists: "None",
       song: "None",
       songURL: "None",
-      songID: "None"
+      songID: "None",
     }
   }
 
@@ -33,7 +30,6 @@ class App extends React.Component {
       getSpotifyTrackID().then( (value) =>
       {
         if(value[0] === true) {
-          let trackData = {};
           console.log(value[1])
           console.log(value[1]['artists'].map(value => value['name']).join(", "))
   
@@ -45,7 +41,7 @@ class App extends React.Component {
             artists: value[1]['artists'].map(value => value['name']).join(", "),
             song: value[1]['name'],
             songURL: value[1]['external_urls']['spotify'],
-            songID: value[1]['id']
+            songID: value[1]['id'],
           })
   
           console.log(this.state)
@@ -59,16 +55,24 @@ class App extends React.Component {
             artists: "None",
             song: "None",
             songURL: "None",
-            songID: "None"
+            songID: "None",
           })
         }
       });
     }
   }
 
-  render() {
+  handleUrlDrop = (e) =>
+  {
+    e.preventDefault();
+    let form = e.target;
+    let elements = form.elements;
+    console.log(new URL(form.elements[0]['value']).pathname)
 
-    console.log(window.location.pathname)
+    window.location.replace(window.location.origin + new URL(form.elements[0]['value']).pathname);
+  }
+
+  render() {
 
     let chatinterface = [];
     if (this.state.loaded) {
@@ -85,18 +89,25 @@ class App extends React.Component {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
             <div class="App">
               <h1 class="App-text1">Drop Song URL Here</h1>
-              <td class="App-url-input"><input type="url"></input></td>
-              <img class="App-logo" src="buds.svg" width = "20%" alt="best friends owo"></img>
+              <div class="App-url-input" style={{display: 'block', margin:'auto'}}>
+                <form onSubmit={this.handleUrlDrop}>
+                  <input type="url" id="url" onSubmit={this.handleUrlDrop}></input>
+                </form>
+              </div>
+              <img class="App-logo" src={"buds.png"} width = "20%" alt="best friends owo"></img>
               <p class="App-text2"><b>to meet spotibuddies</b></p>
             </div>
           </Route>
           <Route>
+            <div class="App">
               {chatinterface}
+            </div>
           </Route>
         </Switch>
       </Router>
     );
   }
+
 }
 
 
