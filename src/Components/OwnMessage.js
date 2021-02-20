@@ -6,9 +6,11 @@ function OwnMessage(props) {
 
   return (
     <div className="Message ownMessage">
+      <div>
       <p className="user">{props.message.userID} (That's you!) said: </p> 
-      <p className="message"> {props.message.message} </p>
-      <p className="timestamp"> at {new Date(props.message.timestamp).toString()}</p>
+      <p className="text"> {props.message.message} </p>
+      <p className="timestamp"> {new Date(props.message.timestamp).toString()}</p>
+      </div>
     </div>
   );
 }

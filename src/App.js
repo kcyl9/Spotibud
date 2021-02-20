@@ -94,7 +94,6 @@ class App extends React.Component {
 
     let chatinterface = [];
     if (this.state.loaded) {
-      chatinterface.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
       chatinterface.push(<Chatbox roomID={this.state.songID} userID={this.state.username}/>)
       chatinterface.push(<Textbox roomID={this.state.songID} userID={this.state.username}/>)
     } else if (this.state.willLoad) {
