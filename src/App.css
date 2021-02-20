@@ -1,8 +1,11 @@
 /* Main Menu - First Page */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 body {
   background: linear-gradient(#2b2b2b, #429c56, #3a3a3a, #000000);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
+  font-family: 'Nunito', sans-serif;
 }
 @keyframes gradient {
 	0% {
@@ -17,7 +20,7 @@ body {
 }
 .App {
   color: rgb(255, 255, 255);
-  font-family: 'proxima-nova', sans-serif;
+
   font-size: 1.8vw;
   font-weight: 200;
   text-align: center;
@@ -62,16 +65,18 @@ body {
 /* Second Page */
 .App2{
   color: rgb(255, 255, 255);
-  font-family: 'proxima-nova', sans-serif;
   font-size: 1.8vw;
   font-weight: 200;
   margin-bottom: 25vh;  
+}
+.header h1 {
+  margin-bottom: 0 !important;
+  font-family: 'Nunito', sans-serif !important;
 }
 .header{
   background-color: #000000;
   width: 100%;
   height: fit-content;
-  margin-bottom: 3%;
   padding: 20px;
 }
 .bud {
@@ -83,7 +88,7 @@ body {
   color:rgb(255, 255, 255);
   display: inline-block;
   font-size: 3.5vw;
-  margin-left: 2%;
+
 }
 p {
   margin: 0.5vw;
