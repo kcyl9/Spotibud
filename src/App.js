@@ -1,5 +1,6 @@
 import './App.css';
 import Textbox from './Components/Textbox.js';
+import TrackInfo from './Components/TrackInfo.js'
 import getSpotifyTrackID from './Controllers/SpotifyQuery.js'
 import React from 'react'
 import {
@@ -114,12 +115,7 @@ class App extends React.Component {
                 <h1 className="Spotibud"><b>Spotibud</b></h1>
               </div>
               <div className="container">
-                <div className="song">
-                  <img className="cover" src="https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/Mononoke-550x546.jpg" width = "100%" alt="song cover"></img> 
-                  <p className="album"><i>Album Name</i></p>
-                  <p className="title"><b>Song Title</b></p>
-                  <p className="artist"><i>Song Artist</i></p>
-                </div>
+                <TrackInfo art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
                 <div className="chatroom">
                   {chatinterface}
                   <p><input className="message" type="text"></input></p>
