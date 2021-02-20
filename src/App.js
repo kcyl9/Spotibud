@@ -96,39 +96,39 @@ class App extends React.Component {
       <Router>
         <Switch>
           <Route path="/" exact>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
-            <div class="App">
-              <h1 class="App-text1"><b>Drop Song URL Here</b></h1>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
+            <div className="App">
+              <h1 className="App-text1"><b>Drop Song URL Here</b></h1>
               <form onSubmit={this.handleUrlDrop}>
-                <input class="App-url-input" type="url" id="url" onSubmit={this.handleUrlDrop}></input>
+                <input className="App-url-input" type="url" id="url" onSubmit={this.handleUrlDrop}></input>
               </form>
-              <img class="App-logo" src={"buds.png"} width = "20%" alt="best friends owo"></img>
-              <p class="App-text2"><b>to meet spotibuddies</b></p>
+              <img className="App-logo" src={"buds.png"} width = "20%" alt="best friends owo"></img>
+              <p className="App-text2"><b>to meet spotibuddies</b></p>
             </div>
           </Route>
           <Route>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
-            <div class="App">
-              <div class="header">
-                <img class="bud" src={"bud.png"} width="4%" alt="best friend owo"></img>
-                <h1 class="Spotibud"><b>Spotibud</b></h1>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
+            <div className="App">
+              <div className="header">
+                <img className="bud" src={"bud.png"} width="4%" alt="best friend owo"></img>
+                <h1 className="Spotibud"><b>Spotibud</b></h1>
               </div>
-              <div class="container">
-                <div class="song">
-                  <img class="cover" src="https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/Mononoke-550x546.jpg" width = "100%" alt="song cover"></img> 
-                  <p class="album"><i>Album Name</i></p>
-                  <p class="title"><b>Song Title</b></p>
-                  <p class="artist"><i>Song Artist</i></p>
-                  <div class="listen">
-                    <p class="text3">Listen on Spotify</p>
+              <div className="container">
+                <div className="song">
+                  <img className="cover" src="https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/Mononoke-550x546.jpg" width = "100%" alt="song cover"></img> 
+                  <p className="album"><i>Album Name</i></p>
+                  <p className="title"><b>Song Title</b></p>
+                  <p className="artist"><i>Song Artist</i></p>
+                  <div className="listen">
+                    <p className="text3">Listen on Spotify</p>
                     <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
-                      <img class="spotifybutton" src="spotifyicon.png" alt="spotify link" width="20%" ></img>
+                      <img className="spotifybutton" src="spotifyicon.png" alt="spotify link" width="20%" ></img>
                     </a>
                   </div>
                 </div>
-                <div class="chatroom">
+                <div className="chatroom">
                   {chatinterface}
-                  <td><input class="message" type="text"></input></td>
+                  <p><input className="message" type="text"></input></p>
                 </div>
               </div>
             </div>

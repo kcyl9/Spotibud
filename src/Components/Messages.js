@@ -18,7 +18,7 @@ function Messages(props) {
 
   return (
     <div className="Messages">
-      {messages}
+      {props.data.map((message, index) => <Message key={index} message={message}/>)}
     </div>
   );
 }
