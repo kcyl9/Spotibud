@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import firebaseApp from "../Controllers/Firebase";
+import firebaseApp from "../Controllers/Firebase.js";
 
 class Textbox extends Component {
   state={
@@ -13,11 +13,11 @@ class Textbox extends Component {
   }
 
   handleSubmit=e=>{
-    let messageRef = firebaseApp.database().ref('spotifyId/messages').orderByKey().limitToLast
+    let messageRef = firebaseApp.database().ref(this.props.songID + '/messages').orderByKey().limitToLast
     const text = {
       message: this.state.message
     }
-    firebaseApp.database().ref('spotifyId/messages').push(text)
+    firebaseApp.database().ref(this.props.songID + '/messages').push(text)
     this.setState({
       message : ""
     })

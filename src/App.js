@@ -24,7 +24,8 @@ class App extends React.Component {
       artists: "None",
       song: "None",
       songURL: "None",
-      songID: "None"
+      songID: "None",
+      songInfo: []
     }
   }
 
@@ -70,26 +71,30 @@ class App extends React.Component {
 
     console.log(window.location.pathname)
 
-    let songinfo = [];
     if (this.state.loaded) {
-      songinfo.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
+      let infoObject = {
+        song: this.state.song,
+        album: this.state.album,
+        artists: this.state.artists
+      }
+      this.state.songInfo.push(infoObject)
     }
     return (
       <Router>
         <Switch>
           <Route path="/" exact>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
             <div class="App">
               <h1 class="App-text1">Drop Song URL Here</h1>
-              <td class="App-url-input"><input type="url"></input></td>
+              <p class="App-url-input"><input type="url"></input></p>
               <img class="App-logo" src="buds.svg" width = "20%" alt="best friends owo"></img>
               <p class="App-text2"><b>to meet spotibuddies</b></p>
             </div>
           </Route>
           <Route>
-              {songinfo}
-              <Chatbox/>
-              <Textbox/>
+              {this.state.songInfo.map(info => <p key={info.artists}>{info.song} from {info.album} by {info.artists} </p>)}
+              <Chatbox songID={this.state.songID}/>
+              <Textbox songID={this.state.songID}/>
           </Route>
         </Switch>
       </Router>

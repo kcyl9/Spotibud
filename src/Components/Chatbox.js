@@ -2,26 +2,36 @@ import React, { Component } from "react";
 import Messages from './Messages.js';
 import firebaseApp from '../Controllers/Firebase.js';
 
-const dbRefObject = firebaseApp.database().ref().child('spotifyId');
-const dbRefMessagesList = dbRefObject.child('messages')
+let dbRefObject;
+let dbRefMessagesList;
 
 class Chatbox extends Component {
-    state = {
-        messages: ["hi", "interesting"]
+    constructor(props) {
+        super(props)
+        this.state = {
+            messages: []
+        }
     }
 
-    componentDidMount = () => {
-        this.buildMessages();
+    newMessage = []
+
+    componentDidUpdate = (previousProps, previousState) => {
+        if (previousProps.songID != this.props.songID) {
+            this.buildMessages();
+        }
     }
 
     buildMessages() {
-       dbRefMessagesList.on('child_added', snap => {
-           if (snap.val().message) {
-               let messages = [...this.state.messages]
-               messages.push(snap.val().message)
-               this.setState({ messages })
-           }
-       })
+        dbRefObject = firebaseApp.database().ref().child(this.props.songID);
+        dbRefMessagesList = dbRefObject.child('messages')
+        dbRefMessagesList.off('child_added')
+        this.newMessage = []
+        dbRefMessagesList.on('child_added', snap => {
+            if (snap.val().message) {
+               this.newMessage.push(snap.val().message)
+               this.setState( {messages: this.newMessage} )
+            }
+        })
     }
 
     render() {
