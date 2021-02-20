@@ -22,6 +22,7 @@ class App extends React.Component {
       song: "None",
       songURL: "None",
       songID: "None",
+      username: ""
     }
   }
 
@@ -33,6 +34,7 @@ class App extends React.Component {
           console.log(value[1])
           console.log(value[1]['artists'].map(value => value['name']).join(", "))
   
+          let json = require("./Components/animals.json")
           this.setState({
             willLoad : true,
             loaded : true,
@@ -42,12 +44,18 @@ class App extends React.Component {
             song: value[1]['name'],
             songURL: value[1]['external_urls']['spotify'],
             songID: value[1]['id'],
+            username: "Anonymous " + json[Math.floor(Math.random() * json.length)]
           })
-  
-          console.log(this.state)
+          console.log(this.state.username)
+
+          // console.log("loaded")
+          // fetch("animals.json").then(response => response.json()).then(
+          //   json => {
+          //   }).catch(e => console.log(e))
   
         } else {
           this.setState({
+            ...this.state,
             willLoad : false,
             loaded : false,
             album: "None",
@@ -60,13 +68,13 @@ class App extends React.Component {
         }
       });
     }
+
   }
 
   handleUrlDrop = (e) =>
   {
     e.preventDefault();
     let form = e.target;
-    let elements = form.elements;
     console.log(new URL(form.elements[0]['value']).pathname)
 
     window.location.replace(window.location.origin + new URL(form.elements[0]['value']).pathname);
@@ -77,8 +85,8 @@ class App extends React.Component {
     let chatinterface = [];
     if (this.state.loaded) {
       chatinterface.push(<p>{this.state.song} from {this.state.album} by {this.state.artists} </p>)
-      chatinterface.push(<Chatbox/>)
-      chatinterface.push(<Textbox/>)
+      chatinterface.push(<Chatbox roomID={this.state.songID} userID={this.state.username}/>)
+      chatinterface.push(<Textbox roomID={this.state.songID} userID={this.state.username}/>)
     } else if (this.state.willLoad) {
       chatinterface.push()// Add loading screen animation here
     } else {
