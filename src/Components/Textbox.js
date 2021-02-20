@@ -30,7 +30,7 @@ class Textbox extends Component {
   render() {
     return (
       <div className="Textbox">
-          <input type="text" onChange={this.handleText} id="message" placeholder="Message your Spotibuds"></input>
+          <input type="text" onChange={this.handleText} id="message" placeholder="Message your Spotibuddies"></input>
           <button onClick={this.handleSubmit} id="send">Send!</button>
       </div>
     );
