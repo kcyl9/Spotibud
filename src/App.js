@@ -123,10 +123,10 @@ class App extends React.Component {
               </div>
               <footer>
               
-                <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
+                <a href={this.state.songURL} target="_blank">
                   <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
                 </a>
-                <p className="text3">Listen on Spotify</p>
+                <a className="text3" href={this.state.songURL} style={{color: 'white'}}>Listen on Spotify</a>
               
               </footer>
               
