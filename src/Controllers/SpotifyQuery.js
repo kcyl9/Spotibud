@@ -9,7 +9,9 @@ function getSpotifyTrackID() {
     let hash = window.location.hash.substring(a+1, b);
     if (hash === "") {
         // If there's no hash yet, go get a hash.
-        cookie.save('lastvisited', window.location.pathname, {path: '/'});
+        if (window.location.pathname.substring(0, 10) !== "/callback/") {
+            cookie.save('lastvisited', window.location.pathname, {path: '/'});
+        } 
         window.location.replace('https://accounts.spotify.com/authorize?client_id=ace3d22c8c11462195389df4b22e4a7c&response_type=token&redirect_uri='
         + encodeURIComponent(window.location.origin + "/callback/").toString())
     } else {
