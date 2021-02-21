@@ -30,6 +30,7 @@ class App extends React.Component {
     if (window.location.pathname != "/") {
       getSpotifyTrackID().then( (value) =>
       {
+        console.log(value)
         if(value[0] === true) {
           console.log(value[1])
           console.log(value[1]['artists'].map(value => value['name']).join(", "))
@@ -46,16 +47,6 @@ class App extends React.Component {
             songID: value[1]['id'],
             username: "Anonymous " + json[Math.floor(Math.random() * json.length)]
           })
-          console.log(this.state.username)
-          let art = new Image(640, 640);
-          art.src = this.state.artURL;
-
-
-          // console.log("loaded")
-          // fetch("animals.json").then(response => response.json()).then(
-          //   json => {
-          //   }).catch(e => console.log(e))
-  
         } else {
           this.setState({
             ...this.state,
@@ -68,6 +59,8 @@ class App extends React.Component {
             songURL: "None",
             songID: "None",
           })
+          alert("We couldn't find the track you were looking for. Redirecting you to our homepage!")
+          window.location.replace(window.location.origin)
         }
       });
     }

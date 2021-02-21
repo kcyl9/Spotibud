@@ -2,6 +2,13 @@ import cookie from 'react-cookies';
 
 let dummy = "http://localhost:3000/track/5Qsp8mtshe70DX7EYbWZGo?si=jpcMh9m4SCqQOKfNBPf3Yw"
 
+function handleFetchErrors(response) {
+    console.log("damn")
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
 
 function getSpotifyTrackID() {
     let a = window.location.hash.indexOf("=")
@@ -28,7 +35,8 @@ function getSpotifyTrackID() {
                 headers: {
                     'Authorization': 'Bearer ' + hash
                 }
-            }).then( response => response.json())
+            }).then(handleFetchErrors)
+            .then( response => response.json())
             .then(data => {return [true, data]})
             .catch(error => {return [false, error]})
         }
