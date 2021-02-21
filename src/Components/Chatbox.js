@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Messages from './Messages.js';
 import firebaseApp from '../Controllers/Firebase.js';
+import './Chatbox.css'
 
 const dbRefObject = firebaseApp.database().ref().child('Rooms')
 let dbRefMessagesList = dbRefObject;
@@ -8,7 +9,8 @@ let dbRefMessagesList = dbRefObject;
 class Chatbox extends Component {
 
     state = {
-        messages: []
+        messages: [],
+        loadedMessages: [],
     }
 
     constructor(props) {
@@ -16,13 +18,16 @@ class Chatbox extends Component {
         dbRefMessagesList = dbRefObject.child(this.props.roomID)
     }
 
+    firstKnownKey;
+    childrenVal = [];
+    childrenKey = [];
 
     componentDidMount = () => {
         this.buildMessages();
     }
 
     buildMessages() {
-       dbRefMessagesList.on('child_added', snap => {
+        dbRefMessagesList.on('child_added', snap => {
            if (snap.val().message) {
                let messages = [...this.state.messages]
                messages.push({message: snap.val().message,
