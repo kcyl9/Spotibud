@@ -109,7 +109,7 @@ class App extends React.Component {
                 <input className="App-url-input" type="url" id="url" onSubmit={this.handleUrlDrop}></input>
               </form>
               <img className="App-logo" src={"buds.png"} width = "20%" alt="best friends owo"></img>
-              <p className="App-text2"><b>to meet spotibuddies</b></p>
+              <p className="App-text2"><b>to meet spotibuddies</b><br/><br/> <a style={{color: 'white', fontSize: '0.5em'}}href="https://github.com/richmondvan/spotibud">View repo here.</a></p>
             </div>
           </Route>
           <Route>
@@ -126,7 +126,7 @@ class App extends React.Component {
                   <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="55vw" ></img>
                 </a>
                 <a className="text3" href={this.state.songURL} style={{color: 'white'}}>Listen on Spotify</a>
-                <p className="copyright"> © 2021 Ethan Kwon, Kirsty Lau, Erin Lee, Evan Zheng</p>
+                <p className="copyright"> <a href="https://github.com/richmondvan/spotibud">Github repo.</a> © 2021 Ethan Kwon, Kirsty Lau, Erin Lee, Evan Zheng</p>
               </footer>
             </div>
           </Route>
