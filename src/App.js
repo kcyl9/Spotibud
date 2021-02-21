@@ -97,7 +97,7 @@ class App extends React.Component {
     return (
       <div>
         <div style={{display: 'flex', alignItems: 'center'}} className="header">
-          <img style={{marginLeft: '5em', marginRight: '1em'}} src={"bud.png"} width="3%" alt="best friend owo"></img>
+          <img style={{marginLeft: '5em', marginRight: '1em'}} src={window.location.origin + "/bud.png"} width="3%" alt="best friend owo"></img>
           <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
         </div>
         <Router>
