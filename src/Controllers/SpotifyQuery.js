@@ -2,6 +2,13 @@ import cookie from 'react-cookies';
 
 let dummy = "http://localhost:3000/track/5Qsp8mtshe70DX7EYbWZGo?si=jpcMh9m4SCqQOKfNBPf3Yw"
 
+function handleFetchErrors(response) {
+    console.log("damn")
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
 
 function getSpotifyTrackID() {
     let a = window.location.hash.indexOf("=")
@@ -9,7 +16,9 @@ function getSpotifyTrackID() {
     let hash = window.location.hash.substring(a+1, b);
     if (hash === "") {
         // If there's no hash yet, go get a hash.
-        cookie.save('lastvisited', window.location.pathname, {path: '/'});
+        if (window.location.pathname.substring(0, 10) !== "/callback/") {
+            cookie.save('lastvisited', window.location.pathname, {path: '/'});
+        } 
         window.location.replace('https://accounts.spotify.com/authorize?client_id=ace3d22c8c11462195389df4b22e4a7c&response_type=token&redirect_uri='
         + encodeURIComponent(window.location.origin + "/callback/").toString())
     } else {
@@ -26,7 +35,8 @@ function getSpotifyTrackID() {
                 headers: {
                     'Authorization': 'Bearer ' + hash
                 }
-            }).then( response => response.json())
+            }).then(handleFetchErrors)
+            .then( response => response.json())
             .then(data => {return [true, data]})
             .catch(error => {return [false, error]})
         }
