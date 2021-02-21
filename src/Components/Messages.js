@@ -18,6 +18,10 @@ function Messages(props) {
     }
   });
 
+  if (messages.length === 0) {
+    messages.push(<p>No messages were found! Be the first to start a conversation.</p>)
+  }
+
   return (
     <div className="Messages">
       {messages}
