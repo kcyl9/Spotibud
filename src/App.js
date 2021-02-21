@@ -96,10 +96,12 @@ class App extends React.Component {
     }
     return (
       <div>
-        <div style={{display: 'flex', alignItems: 'center'}} className="header">
-          <img style={{marginLeft: '5em', marginRight: '1em'}} src={window.location.origin + "/bud.png"} width="3%" alt="best friend owo"></img>
-          <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
-        </div>
+          <a href={window.location.origin} style={{textDecoration: 'none'}}>
+            <div style={{display: 'flex', alignItems: 'center'}} className="header">
+              <img style={{marginLeft: '5em', marginRight: '1em', marginBottom: '0'}} src={window.location.origin + "/bud.png"} width="40em" alt="best friend owo"></img>
+              <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
+            </div>
+          </a>
         <Router>
         <Switch>
           <Route path="/" exact>
