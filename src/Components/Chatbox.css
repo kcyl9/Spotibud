@@ -1,0 +1,9 @@
+.Messages {
+    overflow: auto;
+    height: 800px;
+}
+
+.trackinfo {
+    height: 100vh;
+    position: fixed;
+}

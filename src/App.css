@@ -139,7 +139,7 @@ footer {
 }
 .chatroom {
   width: 60%;
-  height: fit-content;
+  height: 100vh;
   background-color: rgba(255, 255, 255, 0.16);
   float: left;
   padding: 3%;

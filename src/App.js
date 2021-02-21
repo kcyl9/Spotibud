@@ -116,7 +116,7 @@ class App extends React.Component {
           <Route>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
             <div className="App2">
-              <TrackInfo art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
+              <TrackInfo className="trackinfo" art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
               <div className="chatroom">
                   {chatinterface}
                 <p><input className="message" type="text"></input></p>
