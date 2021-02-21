@@ -120,6 +120,12 @@ p {
   float: left;
   font-size: 3vh;
 }
+.copyright {
+  margin-top: 2%;
+  margin-right: 5%;
+  float: right;
+  font-size: 10px;
+}
 .spotifybutton {
   float: left;
   margin-right: 1%;
