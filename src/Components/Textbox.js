@@ -8,16 +8,19 @@ class Textbox extends Component {
 
   handleSubmit=e=>{
     e.preventDefault();
-    const text = {
-      message: e.target.elements[0]['value'],
-      userID: this.props.userID,
-      timestamp: firebase.database.ServerValue.TIMESTAMP
+    let messageText = e.target.elements[0]['value'];
+    if (messageText !== "") {
+      const text = {
+        message: messageText,
+        userID: this.props.userID,
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+      }
+      e.target.elements[0].value="";
+      firebaseApp.database().ref(this.databaseAddress).push(text)
+      this.setState({
+        message : ""
+      })
     }
-    e.target.elements[0].value="";
-    firebaseApp.database().ref(this.databaseAddress).push(text)
-    this.setState({
-      message : ""
-    })
   }
 
   render() {
