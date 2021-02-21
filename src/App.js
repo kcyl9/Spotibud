@@ -78,9 +78,13 @@ class App extends React.Component {
   {
     e.preventDefault();
     let form = e.target;
-    console.log(new URL(form.elements[0]['value']).pathname)
-
-    window.location.replace(window.location.origin + new URL(form.elements[0]['value']).pathname);
+    let redirectURL = new URL(form.elements[0]['value'])
+    console.log(redirectURL.host)
+    if (redirectURL.host === "spotify.com" || redirectURL.host === "open.spotify.com") {
+      window.location.replace(window.location.origin + redirectURL.pathname);
+    } else {
+      alert("This isn't a Spotify URL!")
+    }
   }
 
   render() {
