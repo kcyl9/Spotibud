@@ -121,7 +121,6 @@ class App extends React.Component {
               <TrackInfo art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
               <div className="chatroom">
                   {chatinterface}
-                <p><input className="message" type="text"></input></p>
               </div>
               <footer>
               
@@ -129,9 +128,7 @@ class App extends React.Component {
                   <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
                 </a>
                 <a className="text3" href={this.state.songURL} style={{color: 'white'}}>Listen on Spotify</a>
-              
               </footer>
-              
             </div>
           </Route>
         </Switch>
