@@ -115,12 +115,13 @@ class App extends React.Component {
           <Route>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossOrigin="anonymous"></script>
             <div className="App2">
-              <TrackInfo className="trackinfo" art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
-              <div className="chatroom">
-                  {chatinterface}
+              <div style={{display: 'flex', alignItems: 'top', justifyContent: 'center', flexWrap: 'wrap'}}>
+                <TrackInfo className="trackinfo" art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
+                <div className="chatroom">
+                    {chatinterface}
+                </div>
               </div>
               <footer>
-              
                 <a href={this.state.songURL} target="_blank">
                   <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="55vw" ></img>
                 </a>

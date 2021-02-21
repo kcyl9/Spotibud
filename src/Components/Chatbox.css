@@ -1,6 +1,6 @@
 .Messages {
     overflow: auto;
-    height: 800px;
+    height: calc(89vh - 1.5em - 120px - 6vw);
 }
 
 .trackinfo {

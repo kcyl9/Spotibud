@@ -26,7 +26,7 @@ class Textbox extends Component {
   render() {
     return (
       <div className="Textbox">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} style={{marginTop: '-1em'}}>
           <input className="textbox-input" type="text" id="message" placeholder="Message your Spotibuddies <3"></input>
           <button className="textbox-send" type="submit" id="send">SEND</button>
         </form>
