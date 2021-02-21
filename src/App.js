@@ -50,13 +50,6 @@ class App extends React.Component {
           let art = new Image(640, 640);
           art.src = this.state.artURL;
 
-          // new ColorThief().getPalette(art, 2).then(palette =>
-          //   console.log(palette)
-          //   // document.body.style.setProperty('--primarybg', palette[0]), 
-          //   // document.body.style.setProperty('--secondarybg', palette[1])
-          // )
-
-
 
           // console.log("loaded")
           // fetch("animals.json").then(response => response.json()).then(
@@ -104,7 +97,7 @@ class App extends React.Component {
     return (
       <div>
         <div style={{display: 'flex', alignItems: 'center'}} className="header">
-          <img style={{marginLeft: '5em', marginRight: '1em'}} src={"bud.png"} width="3%" alt="best friend owo"></img>
+          <img style={{marginLeft: '5em', marginRight: '1em'}} src={window.location.origin + "/bud.png"} width="3%" alt="best friend owo"></img>
           <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
         </div>
         <Router>
@@ -130,10 +123,10 @@ class App extends React.Component {
               </div>
               <footer>
               
-                <a href="https://open.spotify.com/track/08ZHVvaudYvVs8ztcKcADf?si=SMphCeZhTFqiBXMR6JKBFg" target="_blank">
+                <a href={this.state.songURL} target="_blank">
                   <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
                 </a>
-                <p className="text3">Listen on Spotify</p>
+                <a className="text3" href={this.state.songURL} style={{color: 'white'}}>Listen on Spotify</a>
               
               </footer>
               

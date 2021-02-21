@@ -8,17 +8,19 @@ function Messages(props) {
   console.log(props.data)
   console.log("here")
   let messages = [];
-  props.data.forEach(element => {
+  props.data.forEach((element, index) => {
     if (element.userID === props.userID) {
-      messages.push(<OwnMessage message={element}/>)
+      console.log(element.userID);
+      console.log(props.userID);
+      messages.push(<OwnMessage message={element} key={index}/>)
     } else {
-      messages.push(<Message message={element}/>)
+      messages.push(<Message message={element} key={index}/>)
     }
   });
 
   return (
     <div className="Messages">
-      {props.data.map((message, index) => <Message key={index} message={message}/>)}
+      {messages}
     </div>
   );
 }
