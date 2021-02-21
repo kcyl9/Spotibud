@@ -82,6 +82,7 @@ body {
   width: 100%;
   height: fit-content;
   padding: 20px;
+  margin-bottom: 2%;
 }
 .bud {
   margin-top: 2.5vh;
@@ -145,21 +146,12 @@ footer {
   padding: 3%;
   margin-right: 5%;
 }
-.message {
-  color: #fff;
-  background: transparent;
-  border-radius: 25px;
-  border: 2px solid #fff;
-  width: 90%;
-  font-size: 1.0vw;
-  padding: 0.8vw;
-}
 .Message {
-  width: 80%;
+  width: 85%;
   margin: 10px auto;
   padding: 12px;
-  color: #000;
-  position:relative;
+  color: #fff;
+  position: relative;
 }
 .otherMessage {
   background: #333;
@@ -201,4 +193,28 @@ footer {
   font-size: 1.0vw;
   text-align: right;
   margin-bottom: 0%;
+}
+.message {
+  color: #fff;
+  background: transparent;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  width: 90%;
+  font-size: 1.0vw;
+  padding: 0.8vw;
+}
+.textbox-input {
+  color: #fff; 
+  background: transparent;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  width: 80%;
+  font-size: 1.0vw;
+  padding:0.8vw;
+  vertical-align: middle;
+}
+::placeholder {
+}
+.textbox-send {
+    
 }
