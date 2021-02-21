@@ -24,8 +24,8 @@ class Textbox extends Component {
     return (
       <div className="Textbox">
         <form onSubmit={this.handleSubmit}>
-          <input className="textbox-input" type="text" id="message" placeholder="Message your Spotibuddies"></input>
-          <button type="submit" className="textbox-send" id="send">Send!</button>
+          <input className="textbox-input" type="text" id="message" placeholder="Message your Spotibuddies <3"></input>
+          <button className="textbox-send" type="submit" id="send">SEND</button>
         </form>
       </div>
     );
