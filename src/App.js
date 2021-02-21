@@ -96,10 +96,12 @@ class App extends React.Component {
     }
     return (
       <div>
-        <div style={{display: 'flex', alignItems: 'center'}} className="header">
-          <img style={{marginLeft: '5em', marginRight: '1em'}} src={"bud.png"} width="3%" alt="best friend owo"></img>
-          <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
-        </div>
+          <a href={window.location.origin} style={{textDecoration: 'none'}}>
+            <div style={{display: 'flex', alignItems: 'center'}} className="header">
+              <img style={{marginLeft: '5em', marginRight: '1em', marginBottom: '0'}} src={window.location.origin + "/bud.png"} width="40em" alt="best friend owo"></img>
+              <h1 style={{fontSize: "2.5em"}}className="Spotibud"><b>Spotibud</b></h1>
+            </div>
+          </a>
         <Router>
         <Switch>
           <Route path="/" exact>
@@ -119,7 +121,6 @@ class App extends React.Component {
               <TrackInfo className="trackinfo" art={this.state.artURL} album={this.state.album} song={this.state.song} artists={this.state.artists}/>
               <div className="chatroom">
                   {chatinterface}
-                <p><input className="message" type="text"></input></p>
               </div>
               <footer>
               
@@ -127,9 +128,7 @@ class App extends React.Component {
                   <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
                 </a>
                 <a className="text3" href={this.state.songURL} style={{color: 'white'}}>Listen on Spotify</a>
-              
               </footer>
-              
             </div>
           </Route>
         </Switch>

@@ -82,6 +82,7 @@ body {
   width: 100%;
   height: fit-content;
   padding: 20px;
+  margin-bottom: 2%;
 }
 .bud {
   margin-top: 2.5vh;
@@ -96,16 +97,6 @@ body {
 }
 p {
   margin: 0.5vw;
-}
-
-footer {
-  float: left;
-  background-color: #000;
-  width: 100%;
-  margin-top: 3%;
-  margin-bottom: 0%;
-  padding-top: 1.2%;
-  padding-bottom: 1.2%;
 }
 .spotifybutton{
   margin-right: 10%;
@@ -145,21 +136,12 @@ footer {
   padding: 3%;
   margin-right: 5%;
 }
-.message {
-  color: #fff;
-  background: transparent;
-  border-radius: 25px;
-  border: 2px solid #fff;
-  width: 90%;
-  font-size: 1.0vw;
-  padding: 0.8vw;
-}
 .Message {
-  width: 80%;
+  width: 85%;
   margin: 10px auto;
   padding: 12px;
   color: #fff;
-  position:relative;
+  position: relative;
 }
 .otherMessage {
   background: #333;
@@ -201,4 +183,31 @@ footer {
   font-size: 1.0vw;
   text-align: right;
   margin-bottom: 0%;
+}
+.textbox-input {
+  color: #fff; 
+  background: transparent;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  width: 80%;
+  font-size: 1.0vw;
+  padding: 0.8vw;
+  vertical-align: middle;
+}
+::placeholder {
+  color: #d6d6d6;
+}
+.textbox-send {
+    
+}
+footer {
+  float: left;
+  background-color: #000;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 0%;
+  padding-top: 1.2%;
+  padding-bottom: 1.2%;
 }
