@@ -3,24 +3,17 @@ import firebaseApp from "../Controllers/Firebase";
 import firebase from 'firebase'
 
 class Textbox extends Component {
-  state={
-    message : ""
-  }
-
-  handleText=e=>{
-    this.setState({
-      message : e.target.value
-    })
-  }
 
   databaseAddress = "Rooms/" + this.props.roomID;
 
   handleSubmit=e=>{
+    e.preventDefault();
     const text = {
-      message: this.state.message,
+      message: e.target.elements[0]['value'],
       userID: this.props.userID,
       timestamp: firebase.database.ServerValue.TIMESTAMP
     }
+    e.target.elements[0].value="";
     firebaseApp.database().ref(this.databaseAddress).push(text)
     this.setState({
       message : ""
@@ -30,8 +23,10 @@ class Textbox extends Component {
   render() {
     return (
       <div className="Textbox">
-          <input className="textbox-input" type="text" onChange={this.handleText} id="message" placeholder="Message your Spotibuddies"></input>
-          <button className="textbox-send" onClick={this.handleSubmit} id="send">Send!</button>
+        <form onSubmit={this.handleSubmit}>
+          <input className="textbox-input" type="text" id="message" placeholder="Message your Spotibuddies"></input>
+          <button type="submit" className="textbox-send" id="send">Send!</button>
+        </form>
       </div>
     );
   } 
