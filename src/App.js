@@ -125,7 +125,7 @@ class App extends React.Component {
               <footer>
               
                 <a href={this.state.songURL} target="_blank">
-                  <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="3%" ></img>
+                  <img className="spotifybutton" src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-icon-marilyn-scott-0.png" alt="spotify link" width="2.6%" ></img>
                 </a>
                 <a className="text3" href={this.state.songURL} style={{color: 'white'}}>Listen on Spotify</a>
               </footer>
