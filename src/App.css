@@ -26,7 +26,6 @@ body {
   text-align: center;
   margin-bottom: 25vh;
 }
-
 .App-text1 {
   margin-top: 15vh;
   margin-bottom: 3vh;
@@ -55,7 +54,6 @@ body {
 *,*:focus,*:hover{
   outline:none;
 }
-
 .App-logo {
   display: block;
   margin-left: auto;
@@ -209,6 +207,11 @@ footer {
   font-size: 1.0vw;
   padding: 0.8vw;
 }
+.textbox-input:hover {
+  background-color: #55555541;
+  transition: background-color .2s;
+  box-shadow: 0px 0px 7px 0.5px;
+}
 ::placeholder {
   color: #d6d6d6;
 }
@@ -221,4 +224,9 @@ footer {
   font-size: 1.4vw;
   padding: 0.5vw;
   margin-left: 2%;
+}
+.textbox-send:hover {
+  background-color: #3b3b3b41;
+  transition: background-color .2s;
+  box-shadow: 0px 0px 7px 0.5px;
 }
