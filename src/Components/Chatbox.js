@@ -9,18 +9,13 @@ let dbRefMessagesList = dbRefObject;
 class Chatbox extends Component {
 
     state = {
-        messages: [],
-        loadedMessages: [],
+        messages: []
     }
 
     constructor(props) {
         super(props)
         dbRefMessagesList = dbRefObject.child(this.props.roomID)
     }
-
-    firstKnownKey;
-    childrenVal = [];
-    childrenKey = [];
 
     componentDidMount = () => {
         this.buildMessages();
