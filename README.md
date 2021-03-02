@@ -1,73 +1,50 @@
-# spotibud
-wip: uofthacks 2021
+# Spotibud
 
-# Getting Started with Create React App
+```
+Connecting music fanatics from around the world = () => {
+    Global chat rooms for every Spotify song, ever.
+}
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Made by Evan Zheng, Ethan Kwon, Erin Lee, and Kristy Lau. Built with Google Cloud Firebase, Spotify API, Bootstrap, and React libraries such as React Cookie and React Router.
 
-## Available Scripts
+Submitted to UofTHacks 2021.
 
-In the project directory, you can run:
+Published: https://spotibud.com or https://spotibud.web.app/
 
-### `npm start`
+## Inspiration ⛅
+Before the opening ceremonies, our team gathered to discuss possible ideas we wanted to implement for our project. We wanted to use concepts that were new to us, while being realistic about our goals. After attending the Google Firebase workshop and receiving this year’s theme, we decided to create a chat room web app based on the Spotify songs the user enjoys. With this service, music fanatics worldwide can join a community and discuss their favourite artists.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What it does 🌐
+Spotibud is a chat room web app that allows users to connect with online buddies from around the world who enjoy the same music. The user begins by inputting the Spotify link of the song that they are listening to. This will direct them to a chat room specifically created for the linked song. From there, users will be able to converse with people from across the world.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Simply take your Spotify link, replace the “spotify” with “spotibud”, and you’re there!
 
-### `npm test`
+## How we built it 👷
+Before we began programming, we delegated tasks to each of our group members. We had two of our members design and code the front-end of our main page, which would take in the Spotify link, and the chat page. The other two members would take on connecting our web page to the Realtime Database in Firebase, as well as using the Spotify API to generate song ids for our chat rooms. Once we had both the front and back-end prepared, we merged them and cleared any errors that occurred. Once this was done, we had a fully functional real-time messaging web app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Important technologies we used:
+- [Node.JS](https://nodejs.org/en/)
+- [React.JS](https://reactjs.org/)
+- [Firebase](https://firebase.google.com/)
 
-### `npm run build`
+And in particular, the tools we used:
+- [Spotify API](https://developer.spotify.com/documentation/web-api/)
+- [React Router](https://reactrouter.com/)
+- [React Cookies](https://www.npmjs.com/package/react-cookies)
+- [Firebase Realtime Database](https://firebase.google.com/docs/database)
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [Domain.com](https://www.domain.com/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Challenges we ran into 😅
+Throughout the development of our website, we faced many challenges as we pushed ourselves to explore new software and languages. Our two front-end developers encountered some problems as they did not have experience with HTML, CSS, and Javascript. In particular, we struggled with creating adaptable elements that would be formatted properly across all devices. Additionally, there were authorization issues when utilizing Spotify API and verifying our own domain.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Accomplishments that we're proud of 🙌
+Through this project, we were not only able to further develop our React skills, but we also learned how to use Google Firebase’s Realtime Database and the Spotify API. Despite it being our first time using a database and the API, our team managed to create a functional web application that updates in real-time. Furthermore, our front-end developers managed to create a stunning UI with custom icons that can be seen throughout the web page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What we learned 😵
+Through this hackathon, we learned a lot about different aspects of both front-end and back-end web development. From coding in unfamiliar languages to using the Spotify API and Google Firebase’s Realtime Database, we expanded and developed our technical skills. Apart from improving our technical expertise, we also learned how to collaborate and interact as a team to overcome any challenges that we encountered.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## What's next for Spotibud 🌟🙊
+In the future, we hope to have users create accounts on our platform which will allow for one-on-one messaging. This will also allow us to recommend popular chat rooms that they may be interested in based on their favourite songs. Additionally, we want to implement listening parties to create a more immersive and interactive environment. Finally, it would be interesting to adapt Spotibud as a chrome extension or mobile app to make it more accessible and user-friendly.
