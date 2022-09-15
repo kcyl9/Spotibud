@@ -10,7 +10,7 @@ Made by Evan Zheng, Ethan Kwon, Erin Lee, and Kristy Lau. Built with Google Clou
 
 Submitted to UofTHacks 2021.
 
-Published: https://spotibud.com or https://spotibud.web.app/
+Published: https://spotibud.web.app/
 
 ## Inspiration ⛅
 Before the opening ceremonies, our team gathered to discuss possible ideas we wanted to implement for our project. We wanted to use concepts that were new to us, while being realistic about our goals. After attending the Google Firebase workshop and receiving this year’s theme, we decided to create a chat room web app based on the Spotify songs the user enjoys. With this service, music fanatics worldwide can join a community and discuss their favourite artists.
