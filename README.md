@@ -6,7 +6,7 @@ Connecting music fanatics from around the world = () => {
 }
 ```
 
-Made by Evan Zheng, Ethan Kwon, Erin Lee, and Kristy Lau. Built with Google Cloud Firebase, Spotify API, Bootstrap, and React libraries such as React Cookie and React Router.
+Made by Kristy Lau, Erin Lee, Evan Zheng, and Ethan Kwon. Built with Google Cloud Firebase, Spotify API, Bootstrap, and React libraries such as React Cookies and React Router.
 
 Submitted to UofTHacks 2021.
 
